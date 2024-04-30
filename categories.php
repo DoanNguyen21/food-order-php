@@ -17,7 +17,7 @@
            if($count>0)
            {
             //categories available
-            while($row = mysqli_fetch_array($res))
+            while($row = mysqli_fetch_assoc($res))
             {
                 //get the value
                 $id = $row['id'];

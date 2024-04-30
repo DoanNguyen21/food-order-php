@@ -40,7 +40,7 @@
         if($count>0)
         {
             //Food Available
-            while($row = mysqli_fetch_array($res))
+            while($row = mysqli_fetch_assoc($res))
             {
                 //get the details
                 $id = $row['id'];

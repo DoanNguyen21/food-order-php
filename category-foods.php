@@ -13,7 +13,7 @@
     $res = mysqli_query($conn, $sql);
 
     //get the value from database
-    $row = mysqli_fetch_array($res);
+    $row = mysqli_fetch_assoc($res);
     //get the title
     $category_title = $row['title'];
   }
@@ -56,7 +56,7 @@
         if($count2>0)
         {
             //Food is available
-            while($row2 = mysqli_fetch_array($res2))
+            while($row2 = mysqli_fetch_assoc($res2))
             {
                 //get all details
                 $id = $row2['id'];
@@ -97,7 +97,8 @@
                 </p>
                 <br>
 
-                <a href="#" class="btn btn-primary">Order Now</a>
+                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id ?>" class="btn btn-primary">Order
+                    Now</a>
             </div>
         </div>
         <?php

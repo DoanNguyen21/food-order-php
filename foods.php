@@ -35,7 +35,7 @@
          if($count>0)
          {
             //Food available
-            while($row=mysqli_fetch_array($res))
+            while($row=mysqli_fetch_assoc($res))
             {
                 //get the value 
                 $id = $row['id'];
@@ -75,7 +75,8 @@
                 </p>
                 <br>
 
-                <a href="#" class="btn btn-primary">Order Now</a>
+                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id ?>" class="btn btn-primary">Order
+                    Now</a>
             </div>
         </div>
 

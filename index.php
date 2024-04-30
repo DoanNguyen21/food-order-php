@@ -13,6 +13,14 @@
  </section>
  <!-- fOOD sEARCH Section Ends Here -->
 
+ <?php 
+        if(isset($_SESSION['order']))
+        {
+            echo $_SESSION['order'];
+            unset($_SESSION['order']);
+        }
+    ?>
+
  <!-- CAtegories Section Starts Here -->
  <section class="categories">
      <div class="container">
@@ -29,7 +37,7 @@
            if($count>0)
            {
             //category is available
-            while($row = mysqli_fetch_array($res))
+            while($row = mysqli_fetch_assoc($res))
             {
                 //get value like id, title, image_name
                 $id = $row['id'];
@@ -95,7 +103,7 @@
          if($count2>0)
          {
             //Food is available
-            while($row2=mysqli_fetch_array($res2))
+            while($row2=mysqli_fetch_assoc($res2))
             {
                 //get all value
                 $id = $row2['id'];
@@ -134,7 +142,8 @@
                  </p>
                  <br>
 
-                 <a href="order.html" class="btn btn-primary">Order Now</a>
+                 <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id ?>" class="btn btn-primary">Order
+                     Now</a>
              </div>
          </div>
          <?php
