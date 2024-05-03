@@ -28,6 +28,8 @@
    
 
         //SQL query to get food based on the search keywords
+        //$search = burger'; DROP database name;
+        // "SELECT * FROM tbl_food WHERE title LIKE '%burger'%' OR description LIKE '%burger%'";
         $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
 
         //execute SQL query
